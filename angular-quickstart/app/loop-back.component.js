@@ -7,18 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.haha = "ddd";
+var LoopbackComponent = (function () {
+    function LoopbackComponent() {
     }
-    return AppComponent;
+    return LoopbackComponent;
 }());
-AppComponent = __decorate([
+LoopbackComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
-        selector: 'my-app',
-        templateUrl: 'tmp/app.component.html'
+        selector: 'loop-back',
+        template: "\n    <input #box (keyup)=\"0\">\n    <p>{{box.value}}</p>\n  "
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], LoopbackComponent);
+exports.LoopbackComponent = LoopbackComponent;
+//# sourceMappingURL=loop-back.component.js.map

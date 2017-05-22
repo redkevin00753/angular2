@@ -7,18 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.haha = "ddd";
+var ClickMeComponent = (function () {
+    function ClickMeComponent() {
+        this.clickMessage = '';
     }
-    return AppComponent;
+    ClickMeComponent.prototype.onClickMe = function () {
+        this.clickMessage = '菜鸟教程!';
+    };
+    return ClickMeComponent;
 }());
-AppComponent = __decorate([
+ClickMeComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
-        selector: 'my-app',
-        templateUrl: 'tmp/app.component.html'
+        selector: 'click-me',
+        template: "\n    <button (click)=\"onClickMe()\">\u70B9\u6211!</button>\n    {{clickMessage}}"
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ClickMeComponent);
+exports.ClickMeComponent = ClickMeComponent;
+//# sourceMappingURL=click-me.component.js.map

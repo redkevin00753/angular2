@@ -7,18 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.haha = "ddd";
+var ClickMe2Component = (function () {
+    function ClickMe2Component() {
+        this.clickMessage = '';
+        this.clicks = 1;
     }
-    return AppComponent;
+    ClickMe2Component.prototype.onClickMe2 = function (event) {
+        var evtMsg = event ? ' 触发事件的元素是:' + event.target.tagName : '';
+        this.clickMessage = ("Click #" + this.clicks++ + ". " + evtMsg);
+    };
+    return ClickMe2Component;
 }());
-AppComponent = __decorate([
+ClickMe2Component = __decorate([
     core_1.Component({
-        moduleId: module.id,
-        selector: 'my-app',
-        templateUrl: 'tmp/app.component.html'
+        selector: 'click-me2',
+        template: "\n    <button (click)=\"onClickMe2($event)\">\u4E0D! .. \u70B9\u6211!</button>\n    {{clickMessage}}"
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ClickMe2Component);
+exports.ClickMe2Component = ClickMe2Component;
+//# sourceMappingURL=click-me2.component.js.map
